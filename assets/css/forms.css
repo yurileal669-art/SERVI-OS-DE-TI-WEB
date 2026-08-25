@@ -1,0 +1,14 @@
+.field{display:grid;gap:7px;margin-bottom:13px}
+.field label{font-size:.86rem;font-weight:800;color:var(--ink)}
+.field input,.field select,.field textarea{
+  width:100%;padding:12px 13px;
+  border:1px solid var(--line);border-radius:12px;
+  background:#fff;color:var(--ink);outline:none;
+  transition:border-color .2s ease,box-shadow .2s ease;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,168,168,.14)
+}
+.field textarea{min-height:105px;resize:vertical}
+.form-grid{display:grid;grid-template-columns:1fr;gap:0}
+.help{font-size:.78rem;color:var(--muted);line-height:1.5}

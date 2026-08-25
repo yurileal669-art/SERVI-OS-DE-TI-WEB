@@ -1,0 +1,15 @@
+import {getDB} from "./storage.js";import {money,dateTime} from "./utils.js";
+const line=(c="=",n=76)=>c.repeat(n);
+function download(name,content,type="text/plain"){const b=new Blob([content],{type:`${type};charset=utf-8`}),u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),700)}
+export function buildGeneralReport(){
+ const db=getDB(),now=new Date();const closed=db.tickets.filter(t=>["Resolvido","Encerrado"].includes(t.status));const slaOk=closed.filter(t=>new Date(t.updatedAt)<=new Date(t.dueAt)).length;
+ const avg=db.feedbacks.length?db.feedbacks.reduce((s,f)=>s+f.rating,0)/db.feedbacks.length:0,total=db.payments.reduce((s,p)=>s+Number(p.total||0),0);
+ const counts={};db.tickets.forEach(t=>counts[t.service]=(counts[t.service]||0)+1);const top=Object.entries(counts).sort((a,b)=>b[1]-a[1])[0];
+ let o=[line(),"SERVIÇOS TI WEB - RELATÓRIO GERAL",line(),`Gerado em: ${dateTime(now.toISOString())}`,"",`Chamados: ${db.tickets.length}`,`Abertos: ${db.tickets.filter(t=>t.status==="Aberto").length}`,`Em atendimento: ${db.tickets.filter(t=>t.status==="Em atendimento").length}`,`Resolvidos/Encerrados: ${closed.length}`,`SLA cumprido (encerrados): ${closed.length?((slaOk/closed.length)*100).toFixed(1):"0"}%`,`Faturamento registrado: ${money(total)}`,`Avaliação média: ${avg.toFixed(2)}/5`,`Serviço mais solicitado: ${top?top[0]+" ("+top[1]+")":"-"}`,"",line("-"),"CHAMADOS",line("-")];
+ db.tickets.forEach(t=>o.push(`${t.id} | ${t.requester} | ${t.service} | ${t.priority} | ${t.status} | SLA ${dateTime(t.dueAt)}`));
+ o.push("",line("-"),"PAGAMENTOS",line("-"));db.payments.forEach(p=>o.push(`${p.id} | ${p.client} | ${p.method} | ${p.status} | ${money(p.total)} | ${dateTime(p.createdAt)}`));
+ o.push("",line("-"),"FEEDBACKS",line("-"));db.feedbacks.forEach(f=>o.push(`${f.id} | ${f.ticketId||"-"} | ${f.rating}/5 | ${f.comment||"-"}`));return o.join("\n");
+}
+export function downloadGeneralTXT(){download(`relatorio-geral-${new Date().toISOString().slice(0,10)}.txt`,buildGeneralReport())}
+export function downloadTicketTXT(id){const db=getDB(),t=db.tickets.find(x=>x.id===id);if(!t)return;let o=[line(),`RELATÓRIO DO CHAMADO ${t.id}`,line(),`Solicitante: ${t.requester}`,`Serviço: ${t.service}`,`Prioridade: ${t.priority}`,`Status: ${t.status}`,`Abertura: ${dateTime(t.createdAt)}`,`SLA: ${dateTime(t.dueAt)}`,`Descrição: ${t.description}`,"",line("-"),"HISTÓRICO",line("-"),...t.history.map(h=>`${dateTime(h.at)} - ${h.action}`),"",line("-"),"COMENTÁRIOS",line("-"),...t.comments.map(c=>`${dateTime(c.at)} - ${c.author}: ${c.text}`)];download(`${t.id}.txt`,o.join("\n"))}
+export function downloadTicketsCSV(){const db=getDB();const rows=[["ID","Solicitante","Empresa","Serviço","Prioridade","Status","Abertura","SLA"],...db.tickets.map(t=>[t.id,t.requester,t.companyId,t.service,t.priority,t.status,t.createdAt,t.dueAt])];download("chamados.csv",rows.map(r=>r.map(v=>`"${String(v??"").replaceAll('"','""')}"`).join(";")).join("\n"),"text/csv")}

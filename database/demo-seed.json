@@ -1,0 +1,302 @@
+{
+  "users": [
+    {
+      "id": "USR-ADM",
+      "name": "Administrador Geral",
+      "email": "admin@servicosti.local",
+      "passwordHash": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+      "role": "admin",
+      "companyId": "EMP-001",
+      "active": true
+    },
+    {
+      "id": "USR-TEC",
+      "name": "Carlos Técnico",
+      "email": "tecnico@servicosti.local",
+      "passwordHash": "a5a0e07eb080d1280a3e7f356428d2d7cc714199626ca6a17987a91cf0c781bc",
+      "role": "technician",
+      "companyId": "EMP-001",
+      "active": true
+    },
+    {
+      "id": "USR-EMP",
+      "name": "Marina Gestora",
+      "email": "empresa@cliente.local",
+      "passwordHash": "370908785aac3ff7aa27c501ff5f1e2ecadc0f8c0528409a09afb260af31cdf0",
+      "role": "company",
+      "companyId": "EMP-002",
+      "active": true
+    },
+    {
+      "id": "USR-CLI",
+      "name": "João Cliente",
+      "email": "cliente@local.test",
+      "passwordHash": "09a31a7001e261ab1e056182a71d3cf57f582ca9a29cff5eb83be0f0549730a9",
+      "role": "client",
+      "companyId": "",
+      "active": true
+    }
+  ],
+  "companies": [
+    {
+      "id": "EMP-001",
+      "name": "Serviços TI Web",
+      "cnpj": "00.000.000/0001-00",
+      "department": "Tecnologia",
+      "costCenter": "TI-001",
+      "contract": "Operação interna",
+      "slaPlan": "Premium"
+    },
+    {
+      "id": "EMP-002",
+      "name": "Alpha Comércio Ltda.",
+      "cnpj": "12.345.678/0001-90",
+      "department": "Operações",
+      "costCenter": "OP-210",
+      "contract": "Suporte Mensal 40h",
+      "slaPlan": "Business"
+    },
+    {
+      "id": "EMP-003",
+      "name": "Beta Logística S.A.",
+      "cnpj": "45.111.222/0001-77",
+      "department": "Infraestrutura",
+      "costCenter": "INF-309",
+      "contract": "Atendimento sob demanda",
+      "slaPlan": "Standard"
+    }
+  ],
+  "services": [
+    {
+      "id": "SRV-001",
+      "name": "Suporte Remoto",
+      "category": "Help Desk",
+      "model": "Hora",
+      "price": 80,
+      "businessPrice": 68,
+      "estimated": "1–2h",
+      "description": "Diagnóstico e resolução remota de problemas em estações de trabalho."
+    },
+    {
+      "id": "SRV-002",
+      "name": "Formatação e Otimização",
+      "category": "Suporte Técnico",
+      "model": "Preço fixo",
+      "price": 150,
+      "businessPrice": 130,
+      "estimated": "2–4h",
+      "description": "Formatação, instalação de sistema e otimização básica."
+    },
+    {
+      "id": "SRV-003",
+      "name": "Visita Técnica",
+      "category": "Infraestrutura",
+      "model": "Hora",
+      "price": 120,
+      "businessPrice": 100,
+      "estimated": "1–3h",
+      "description": "Atendimento presencial para diagnóstico e manutenção."
+    },
+    {
+      "id": "SRV-004",
+      "name": "Consultoria em TI",
+      "category": "Consultoria",
+      "model": "Hora",
+      "price": 180,
+      "businessPrice": 150,
+      "estimated": "Sob agenda",
+      "description": "Avaliação técnica e recomendações para infraestrutura e processos."
+    },
+    {
+      "id": "SRV-005",
+      "name": "Análise de Rede",
+      "category": "Redes",
+      "model": "Preço fixo",
+      "price": 220,
+      "businessPrice": 190,
+      "estimated": "2–5h",
+      "description": "Diagnóstico de conectividade, latência, equipamentos e topologia."
+    },
+    {
+      "id": "SRV-006",
+      "name": "Backup e Recuperação",
+      "category": "Segurança",
+      "model": "Sob orçamento",
+      "price": 0,
+      "businessPrice": 0,
+      "estimated": "Variável",
+      "description": "Planejamento de backup, restauração e recuperação de dados."
+    },
+    {
+      "id": "SRV-007",
+      "name": "Configuração de Cloud",
+      "category": "Cloud",
+      "model": "Projeto",
+      "price": 650,
+      "businessPrice": 550,
+      "estimated": "1–3 dias",
+      "description": "Configuração inicial de ambiente em nuvem e boas práticas."
+    },
+    {
+      "id": "SRV-008",
+      "name": "Avaliação de Segurança",
+      "category": "Cibersegurança",
+      "model": "Projeto",
+      "price": 900,
+      "businessPrice": 760,
+      "estimated": "2–5 dias",
+      "description": "Revisão de exposição, controles básicos e recomendações."
+    }
+  ],
+  "tickets": [
+    {
+      "id": "TI-2026-1001",
+      "requester": "Marina Gestora",
+      "companyId": "EMP-002",
+      "serviceId": "SRV-005",
+      "service": "Análise de Rede",
+      "priority": "Alta",
+      "status": "Em atendimento",
+      "technicianId": "USR-TEC",
+      "createdAt": "2026-08-23T12:00:00.000Z",
+      "updatedAt": "2026-08-24T10:30:00.000Z",
+      "dueAt": "2026-08-23T20:00:00.000Z",
+      "description": "Oscilações de rede no setor comercial.",
+      "history": [
+        {
+          "at": "2026-08-23T12:00:00.000Z",
+          "action": "Chamado aberto"
+        },
+        {
+          "at": "2026-08-23T12:15:00.000Z",
+          "action": "Atribuído ao técnico Carlos Técnico"
+        },
+        {
+          "at": "2026-08-24T10:30:00.000Z",
+          "action": "Diagnóstico em andamento"
+        }
+      ],
+      "comments": [
+        {
+          "id": "C-1",
+          "author": "Carlos Técnico",
+          "at": "2026-08-24T10:20:00.000Z",
+          "text": "Identificada perda de pacotes no enlace principal."
+        }
+      ],
+      "attachments": []
+    },
+    {
+      "id": "TI-2026-1002",
+      "requester": "João Cliente",
+      "companyId": "",
+      "serviceId": "SRV-002",
+      "service": "Formatação e Otimização",
+      "priority": "Média",
+      "status": "Resolvido",
+      "technicianId": "USR-TEC",
+      "createdAt": "2026-08-20T13:00:00.000Z",
+      "updatedAt": "2026-08-20T17:30:00.000Z",
+      "dueAt": "2026-08-21T13:00:00.000Z",
+      "description": "Notebook muito lento e com erros de inicialização.",
+      "history": [
+        {
+          "at": "2026-08-20T13:00:00.000Z",
+          "action": "Chamado aberto"
+        },
+        {
+          "at": "2026-08-20T17:30:00.000Z",
+          "action": "Status alterado para Resolvido"
+        }
+      ],
+      "comments": [],
+      "attachments": []
+    },
+    {
+      "id": "TI-2026-1003",
+      "requester": "Equipe Beta",
+      "companyId": "EMP-003",
+      "serviceId": "SRV-003",
+      "service": "Visita Técnica",
+      "priority": "Crítica",
+      "status": "Aberto",
+      "technicianId": "",
+      "createdAt": "2026-08-24T11:00:00.000Z",
+      "updatedAt": "2026-08-24T11:00:00.000Z",
+      "dueAt": "2026-08-24T15:00:00.000Z",
+      "description": "Servidor local indisponível após queda de energia.",
+      "history": [
+        {
+          "at": "2026-08-24T11:00:00.000Z",
+          "action": "Chamado aberto"
+        }
+      ],
+      "comments": [],
+      "attachments": []
+    }
+  ],
+  "cart": [],
+  "payments": [
+    {
+      "id": "PAY-1001",
+      "client": "Alpha Comércio Ltda.",
+      "createdAt": "2026-08-22T14:00:00.000Z",
+      "status": "Pago",
+      "method": "PIX",
+      "total": 320,
+      "costCenter": "OP-210",
+      "purchaseOrder": "PO-889"
+    },
+    {
+      "id": "PAY-1002",
+      "client": "João Cliente",
+      "createdAt": "2026-08-20T17:40:00.000Z",
+      "status": "Pago",
+      "method": "Cartão",
+      "total": 150,
+      "costCenter": "",
+      "purchaseOrder": ""
+    }
+  ],
+  "feedbacks": [
+    {
+      "id": "FDB-1001",
+      "ticketId": "TI-2026-1002",
+      "rating": 5,
+      "comment": "Atendimento rápido e claro.",
+      "createdAt": "2026-08-20T18:00:00.000Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "NTF-1",
+      "message": "Chamado crítico TI-2026-1003 aberto.",
+      "read": false,
+      "createdAt": "2026-08-24T11:00:00.000Z"
+    },
+    {
+      "id": "NTF-2",
+      "message": "Pagamento PAY-1001 confirmado.",
+      "read": true,
+      "createdAt": "2026-08-22T14:00:00.000Z"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "CTR-001",
+      "companyId": "EMP-002",
+      "name": "Suporte Mensal 40h",
+      "monthlyValue": 2800,
+      "billing": "Faturado 30 dias",
+      "active": true
+    },
+    {
+      "id": "CTR-002",
+      "companyId": "EMP-003",
+      "name": "Sob demanda",
+      "monthlyValue": 0,
+      "billing": "Boleto/PIX",
+      "active": true
+    }
+  ]
+}

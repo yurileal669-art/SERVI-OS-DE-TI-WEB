@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="pt-BR"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260824-05-39521aa","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFLd8sKbwc,2","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Libre Baskerville":"YACgEUFdPdA,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YADLjI9qxTA,0","Nunito":"YACgEX8C5Gg,0","Oleo Script":"YACgEQQ14jI,0","Phantom Sans":"YAHO2E8Pb88,0","Playfair Display":"YACgEYmuCJE,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YADWjpfPmdk,0","Raleway":"YACgEVg3xZg,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Ubuntu":"YACgERDU--Q,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YADlN8CFZ8Q,0","ui-sans-serif":"YACkoN-xg4g,0"}}');</script><script src="/_sdk/50d846425a1e5082.telemetry_sdk.js" integrity="sha512-Otbex+ztlVbcEGql0rXGd/3E3ee/hqAntg6DeuUEMG6pIPbXGOSvZbFZVzknAXi1tH/itQ+ijEhOTr2aWj6CXg=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitação de Serviços T.I.</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/b3bf9e8ac58e6ad6.data_sdk.js" integrity="sha512-otc1u9NYq9Ms5Jt//7vmhrrqR5CLPr8Jdgs6741gqniClfLMcfmC+jK/cKuQdhLv6G0esJ/FzaMS9tv0T/vj/Q=="></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #102a43;
+      --muted: #627d98;
+      --line: #d9e2ec;
+      --navy: #102a43;
+      --cyan: #00a8a8;
+      --cyan-dark: #007d7d;
+      --soft-cyan: #e7f8f8;
+      --danger: #b42318;
+      --success: #087f5b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      width: 100%;
+      min-height: calc(100 * min(var(--vh, 1vh), 1vh));
+      margin: 0;
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    button, input, select, textarea { font: inherit; }
+
+    .app-shell {
+      width: 100%;
+      min-height: calc(100 * min(var(--vh, 1vh), 1vh));
+      display: flex;
+      justify-content: center;
+      padding: 0 0 28px;
+      overflow-x: hidden;
+    }
+
+    .mobile-frame { width: 100%; max-width: 540px; }
+
+    .top-grid {
+      position: relative;
+      overflow: hidden;
+      padding: 28px 24px 46px;
+      border-radius: 0 0 30px 30px;
+      background-color: #102a43;
+      background-image:
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+
+    .top-grid::after {
+      content: "";
+      width: 165px;
+      height: 165px;
+      position: absolute;
+      right: -68px;
+      bottom: -84px;
+      border: 1px solid rgba(95, 255, 238, .32);
+      border-radius: 50%;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: #fff;
+      background: #00a8a8;
+      box-shadow: 0 10px 24px rgba(0, 168, 168, .24);
+    }
+
+    .eyebrow {
+      font-family: "Space Mono", monospace;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      font-size: .67rem;
+    }
+
+    .flow-panel {
+      position: relative;
+      margin: -22px 16px 0;
+      padding: 22px;
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(16, 42, 67, .13);
+    }
+
+    .profile-choice {
+      width: 100%;
+      min-height: 156px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 18px;
+      text-align: left;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      cursor: pointer;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .profile-choice:hover {
+      transform: translateY(-2px);
+      border-color: var(--cyan);
+      box-shadow: 0 10px 22px rgba(16, 42, 67, .1);
+    }
+
+    .profile-icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0;
+      border: 0;
+      color: var(--cyan-dark);
+      background: transparent;
+      font-size: .84rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .field-label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: .87rem;
+      font-weight: 700;
+    }
+
+    .field-control {
+      width: 100%;
+      padding: 12px 13px;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      outline: none;
+      background: #fff;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .field-control:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(0, 168, 168, .16);
+    }
+
+    textarea.field-control { min-height: 108px; resize: vertical; }
+
+    .select-wrap { position: relative; }
+    .select-wrap svg {
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      right: 13px;
+      transform: translateY(-50%);
+      color: var(--muted);
+    }
+
+    select.field-control { appearance: none; padding-right: 42px; }
+
+    .corporate-fields {
+      overflow: hidden;
+      max-height: 700px;
+      opacity: 1;
+      transition: max-height .32s ease, opacity .24s ease, margin .3s ease;
+    }
+
+    .corporate-fields.is-hidden {
+      max-height: 0;
+      margin: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .submit-button {
+      width: 100%;
+      min-height: 52px;
+      border: 0;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: transform .18s ease, filter .18s ease, opacity .18s ease;
+    }
+
+    .submit-button:hover { filter: brightness(.94); transform: translateY(-1px); }
+    .submit-button:disabled { cursor: not-allowed; opacity: .72; transform: none; }
+
+    .status-message {
+      display: none;
+      gap: 9px;
+      align-items: flex-start;
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-size: .88rem;
+      line-height: 1.4;
+    }
+
+    .status-message.is-visible { display: flex; }
+    .status-message.success { color: var(--success); background: #e6fcf5; }
+    .status-message.error { color: var(--danger); background: #fff1f0; }
+
+    .screen { animation: rise .45s ease both; }
+    .screen.is-hidden { display: none; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    :focus-visible { outline: 3px solid #5eead4; outline-offset: 3px; }
+
+    @media (min-width: 640px) {
+      .flow-panel { padding: 26px; }
+    }
+  </style>
+  <script src="/_sdk/a27879be4562f807.resizing_sdk.js" type="text/javascript" integrity="sha512-trcxRwz+QLrzK0Dqg95xqVRryR7WtWui2YopXyzOIr3WMde3j/xCRgT63/b/EAg7klDsAOuHzoRgoryhwm8QFw=="></script>
+ </head>
+ <body data-template-id="__page-root" style="background: rgb(237, 246, 247);">
+  <div class="app-shell">
+   <div class="mobile-frame">
+    <header data-template-id="app-header" class="canva-header top-grid" style="background: rgb(16, 42, 67);">
+     <div class="relative z-10 flex items-start gap-3">
+      <div class="brand-mark" aria-hidden="true"><i data-lucide="life-buoy" style="width:22px;height:22px"></i>
+      </div>
+      <div>
+       <p data-template-id="app-eyebrow" class="canva-text eyebrow m-0" style="color: rgb(117, 246, 227); font-weight: 700; font-style: normal; font-size: 11px; letter-spacing: 0.08rem;">CENTRAL DE SERVIÇOS</p>
+       <h1 data-template-id="app-title" class="canva-text mt-2 mb-1 font-bold leading-tight" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 32px;">Precisa de apoio em T.I.?</h1>
+       <p data-template-id="app-subtitle" class="canva-text m-0 max-w-sm text-sm leading-relaxed" style="color: rgb(200, 217, 232); font-weight: 400; font-style: normal; font-size: 16px;">Escolha o tipo de atendimento e envie sua solicitação de forma simples.</p>
+      </div>
+     </div>
+    </header>
+    <main class="w-full">
+     <section id="profile-screen" class="screen" aria-labelledby="profile-title">
+      <div data-template-id="profile-card" class="canva-card flow-panel" style="background: rgb(255, 255, 255);">
+       <p data-template-id="profile-kicker" class="canva-text eyebrow mb-2" style="color: rgb(0, 168, 168); font-weight: 700; font-style: normal; font-size: 11px; letter-spacing: 0.08rem;">COMECE POR AQUI</p>
+       <h2 id="profile-title" data-template-id="profile-title-text" class="canva-text mb-2 font-bold leading-tight" style="color: rgb(16, 42, 67); font-weight: 700; font-style: normal; font-size: 24px;">Como você precisa de ajuda?</h2>
+       <p data-template-id="profile-description" class="canva-text mb-5 text-sm leading-relaxed" style="color: rgb(98, 125, 152); font-weight: 400; font-style: normal; font-size: 16px;">Selecione o perfil que melhor representa sua solicitação para receber o formulário ideal.</p>
+       <div class="grid gap-3 sm:grid-cols-2"><button id="company-choice" data-template-id="company-choice" class="canva-card profile-choice" type="button" style="background: rgb(247, 255, 255); color: rgb(16, 42, 67);"> <span data-template-id="company-icon" class="canva-tag profile-icon" style="background: rgb(216, 245, 244); color: rgb(0, 125, 125);"> <i data-lucide="building-2" style="width:21px;height:21px"></i> </span> <span data-template-id="company-choice-title" class="canva-text font-bold" style="color: rgb(16, 42, 67); font-weight: 700; font-style: normal; font-size: 18px;">Empresa</span> <span data-template-id="company-choice-description" class="canva-text text-sm leading-relaxed" style="color: rgb(98, 125, 152); font-weight: 400; font-style: normal; font-size: 16px;">Fluxo corporativo com dados da empresa, setor e prioridade do atendimento.</span> </button> <button id="user-choice" data-template-id="user-choice" class="canva-card profile-choice" type="button" style="background: rgb(255, 255, 255); color: rgb(16, 42, 67);"> <span data-template-id="user-icon" class="canva-tag profile-icon" style="background: rgb(232, 240, 247); color: rgb(16, 42, 67);"> <i data-lucide="user-round" style="width:21px;height:21px"></i> </span> <span data-template-id="user-choice-title" class="canva-text font-bold" style="color: rgb(16, 42, 67); font-weight: 700; font-style: normal; font-size: 18px;">Usuário comum</span> <span data-template-id="user-choice-description" class="canva-text text-sm leading-relaxed" style="color: rgb(98, 125, 152); font-weight: 400; font-style: normal; font-size: 16px;">Fluxo auxiliar e rápido, com menos informações para pedir suporte.</span> </button>
+       </div>
+      </div>
+     </section>
+     <section id="form-screen" class="screen is-hidden" aria-labelledby="form-title">
+      <div data-template-id="request-card" class="canva-card flow-panel" style="background: rgb(255, 255, 255);"><button id="back-button" class="back-button mb-5" type="button"> <i data-lucide="arrow-left" style="width:16px;height:16px"></i> <span data-template-id="back-button-text" class="canva-text" style="color: rgb(0, 125, 125); font-weight: 700; font-style: normal; font-size: 14px;">Alterar tipo de atendimento</span> </button>
+       <div class="mb-6">
+        <p id="company-kicker" data-template-id="company-form-kicker" class="canva-text eyebrow mb-2" style="color: rgb(0, 168, 168); font-weight: 700; font-style: normal; font-size: 11px; letter-spacing: 0.08rem;">ATENDIMENTO CORPORATIVO</p>
+        <p id="user-kicker" data-template-id="user-form-kicker" class="canva-text eyebrow mb-2 hidden" style="color: rgb(0, 168, 168); font-weight: 700; font-style: normal; font-size: 11px; letter-spacing: 0.08rem;">ATENDIMENTO AUXILIAR</p>
+        <h2 id="form-title" data-template-id="form-title-text" class="canva-text mb-2 font-bold leading-tight" style="color: rgb(16, 42, 67); font-weight: 700; font-style: normal; font-size: 24px;">Descreva sua necessidade</h2>
+        <p id="company-description" data-template-id="company-form-description" class="canva-text m-0 text-sm leading-relaxed" style="color: rgb(98, 125, 152); font-weight: 400; font-style: normal; font-size: 16px;">Informe os dados corporativos para que a equipe direcione o chamado com mais agilidade.</p>
+        <p id="user-description" data-template-id="user-form-description" class="canva-text m-0 hidden text-sm leading-relaxed" style="color: rgb(98, 125, 152); font-weight: 400; font-style: normal; font-size: 16px;">Conte brevemente o que você precisa. Vamos encaminhar seu pedido para o suporte.</p>
+       </div>
+       <form id="service-form" novalidate="">
+        <div class="space-y-4">
+         <div><label data-template-id="name-label" class="canva-text field-label" for="nome_solicitante" style="color: rgb(16, 42, 67); font-weight: 700; font-style: normal; font-size: 14px;">Nome do solicitante</label> <input id="nome_solicitante" class="field-control" type="text" autocomplete="name" required="">
+         </div>
+         <div><label data-template-id="phone-label" class="canva-text field-label" for="telefone" style="color: rgb(16, 42, 67); font-weight: 700; font-style: normal; font-size: 14px;">Telefone comercial</label> <input id="telefone" class="field-control" type="tel" autocomplete="tel" required="">
+         </div>
+         <div><label data-template-id="address-label" class="canva-text field-label" for="endereco" style="color: rgb(16, 42, 67); font-weight: 700; font-style: normal; font-size: 14px;">Endereço</label> <input id="endereco" class="field-control" type="text" autocomplete="street-address">
+          <p data-template-id="address-note" class="canva-text mt-2 mb-0 text-xs leading-relaxed" style="color: rgb(98, 125, 152); font-weight: 400; font-style: normal; font-size: 12px;">Opcional para Usuário comum. Preencha somente se desejar atendimento Home Office; será cobrada uma taxa de serviço.</p>
+         </div>
+         <div id="corporate-fields" class="corporate-fields space-y-4">
+          <div><label data-template-id="email-label" class="canva-text field-label" for="email" style="color: rgb(16, 42, 67); font-weight: 700; font-style: normal; font-size: 14px;">E-mail corporativo</label> <input id="email" class="field-control" type="email" autocomplete="email">
+          </div>
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+           <div><label data-template-id="company-label" class="canva-text field-label" for="empresa" style="color: rgb(16, 42, 67); font-weight: 700; font-style: normal; font-size: 14px;">Empresa</label> <input id="empresa" class="field-control" type="text">
+           </div>
+           <div><label data-template-id="department-label" class="canva-text field-label" for="departamento" style="color: rgb(16, 42, 67); font-weight: 700; font-style: normal; font-size: 14px;">Departamento</label> <input id="departamento" class="field-control" type="text">
+           </div>
+          </div>
+         </div>
+         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div><label data-template-id="service-label" class="canva-text field-label" for="tipo_servico" style="color: rgb(16, 42, 67); font-weight: 700; font-style: normal; font-size: 14px;">Tipo de serviço</label>
+           <div class="select-wrap"><select id="tipo_servico" class="field-control" required=""> <option value="">Selecione</option> <option value="Cibersegurança">Cibersegurança</option> <option value="Computação em Nuvem (Cloud)">Computação em Nuvem (Cloud)</option> <option value="Inteligência Artificial e Machine Learning">Inteligência Artificial e Machine Learning</option> <option value="Desenvolvimento de Software e Apps">Desenvolvimento de Software e Apps</option> <option value="Consultoria em TI">Consultoria em TI</option> <option value="Suporte Técnico e Help Desk">Suporte Técnico e Help Desk</option> <option value="Ciência de Dados e Big Data">Ciência de Dados e Big Data</option> <option value="Outsourcing de TI (BPO)">Outsourcing de TI (BPO)</option> <option value="Gestão de Infraestrutura de TI">Gestão de Infraestrutura de TI</option> <option value="DevOps e Automação">DevOps e Automação</option> <option value="Internet das Coisas (IoT)">Internet das Coisas (IoT)</option> <option value="Blockchain">Blockchain</option> <option value="Realidade Aumentada/Virtual (AR/VR)">Realidade Aumentada/Virtual (AR/VR)</option> <option value="Computação Quântica">Computação Quântica</option> <option value="Dispositivos como Serviço (DaaS)">Dispositivos como Serviço (DaaS)</option> </select> <i data-lucide="chevron-down" style="width:17px;height:17px"></i>
+           </div>
+          </div>
+          <div><label data-template-id="detail-label" class="canva-text field-label" for="servico_detalhado" style="color: rgb(16, 42, 67); font-weight: 700; font-style: normal; font-size: 14px;">Serviço a realizar</label>
+           <div class="select-wrap"><select id="servico_detalhado" class="field-control" required=""> <option value="">Selecione primeiro um tipo de serviço</option> </select> <i data-lucide="chevron-down" style="width:17px;height:17px"></i>
+           </div>
+          </div>
+          <div id="priority-field"><label data-template-id="priority-label" class="canva-text field-label" for="prioridade" style="color: rgb(16, 42, 67); font-weight: 700; font-style: normal; font-size: 14px;">Prioridade</label>
+           <div class="select-wrap"><select id="prioridade" class="field-control"> <option value="">Selecione</option> <option value="Baixa">Baixa</option> <option value="Média">Média</option> <option value="Alta">Alta</option> <option value="Crítica">Crítica</option> </select> <i data-lucide="chevron-down" style="width:17px;height:17px"></i>
+           </div>
+          </div>
+         </div>
+         <div id="priority-guide" data-template-id="priority-guide" class="canva-banner flex flex-wrap gap-x-4 gap-y-2 rounded-xl p-3" style="background: rgb(247, 250, 252); color: rgb(98, 125, 152);"><span class="canva-text text-xs"><span class="mr-1 inline-block h-2 w-2 rounded-full bg-emerald-500"></span><span data-template-id="priority-low" class="canva-text" style="color: rgb(98, 125, 152); font-weight: 400; font-style: normal; font-size: 12px;">Baixa: sem impacto imediato</span></span> <span class="canva-text text-xs"><span class="mr-1 inline-block h-2 w-2 rounded-full bg-amber-400"></span><span data-template-id="priority-high" class="canva-text" style="color: rgb(98, 125, 152); font-weight: 400; font-style: normal; font-size: 12px;">Alta: trabalho bloqueado</span></span> <span class="canva-text text-xs"><span class="mr-1 inline-block h-2 w-2 rounded-full bg-red-500"></span><span data-template-id="priority-critical" class="canva-text" style="color: rgb(98, 125, 152); font-weight: 400; font-style: normal; font-size: 12px;">Crítica: operação parada</span></span>
+         </div>
+         <div><label data-template-id="description-label" class="canva-text field-label" for="descricao" style="color: rgb(16, 42, 67); font-weight: 700; font-style: normal; font-size: 14px;">Como podemos ajudar?</label> <textarea id="descricao" class="field-control" required=""></textarea>
+         </div>
+         <aside data-template-id="response-note" class="canva-banner rounded-xl p-3" style="background: rgb(231, 248, 248); color: rgb(0, 125, 125);">
+          <div class="flex gap-3"><i data-lucide="clock-3" class="mt-0.5 shrink-0" style="width:18px;height:18px"></i>
+           <div>
+            <h3 data-template-id="response-note-title" class="canva-text m-0 text-sm font-bold" style="color: rgb(0, 125, 125); font-weight: 700; font-style: normal; font-size: 14px;">Atendimento com contexto é mais rápido</h3>
+            <p data-template-id="response-note-text" class="canva-text mt-1 mb-0 text-xs leading-relaxed" style="color: rgb(50, 107, 107); font-weight: 400; font-style: normal; font-size: 12px;">Inclua mensagens de erro, serviço envolvido e desde quando o problema ocorre.</p>
+           </div>
+          </div>
+         </aside>
+         <div data-template-id="terms-consent" class="canva-banner flex items-start gap-3 rounded-xl p-3" style="background: rgb(247, 250, 252); color: rgb(16, 42, 67);">
+          <input id="terms-consent-checkbox" data-template-id="terms-consent-checkbox" class="canva-input mt-1 shrink-0" type="checkbox" required="" style="color: rgb(0, 168, 168);"> <label data-template-id="terms-consent-label" class="canva-text text-sm leading-relaxed" for="terms-consent-checkbox" style="color: rgb(16, 42, 67); font-weight: 400; font-style: normal; font-size: 14px;">Declaro que li e aceito as políticas de termos e serviços da empresa.</label>
+         </div>
+         <div id="form-status" class="status-message" role="status" aria-live="polite"></div>
+         <div id="submit-slot"><button id="submit-button" data-template-id="submit-button" class="canva-button submit-button font-bold" type="submit" style="background: rgb(0, 168, 168); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Enviar solicitação</button> <button id="sending-button" data-template-id="sending-button" class="canva-button submit-button hidden font-bold" type="button" disabled="" style="background: rgb(0, 125, 125); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Enviando solicitação...</button>
+         </div>
+         <p data-template-id="form-helper" class="canva-text m-0 text-center text-xs leading-relaxed" style="color: rgb(98, 125, 152); font-weight: 400; font-style: normal; font-size: 12px;">Seu pedido será encaminhado diretamente para a equipe de T.I.</p>
+        </div>
+       </form>
+      </div>
+     </section>
+    </main>
+    <footer data-template-id="app-footer" class="canva-footer px-6 pt-6 text-center" style="background: transparent;">
+     <p data-template-id="footer-text" class="canva-text m-0 text-xs" style="color: rgb(98, 125, 152); font-weight: 400; font-style: normal; font-size: 12px;">Central de Serviços T.I. • Atendimento interno</p>
+    </footer>
+   </div>
+  </div>
+  <script src="/_sdk/489148d8756906ef.editing_sdk.js" integrity="sha512-hxxSbMNp1t+UEu3j/dIQUU4MJnmsCo0Gs3iQVVS706vrCJ3Yt2+ySOlfJEaPyiyQVLjZRmn1dNVqg6M40VZZHQ=="></script>
+  <script>
+    const form = document.getElementById("service-form");
+    const profileScreen = document.getElementById("profile-screen");
+    const formScreen = document.getElementById("form-screen");
+    const corporateFields = document.getElementById("corporate-fields");
+    const priorityField = document.getElementById("priority-field");
+    const priorityGuide = document.getElementById("priority-guide");
+    const companyKicker = document.getElementById("company-kicker");
+    const userKicker = document.getElementById("user-kicker");
+    const companyDescription = document.getElementById("company-description");
+    const userDescription = document.getElementById("user-description");
+    const submitButton = document.getElementById("submit-button");
+    const sendingButton = document.getElementById("sending-button");
+    const statusMessage = document.getElementById("form-status");
+    const serviceSelect = document.getElementById("tipo_servico");
+    const detailSelect = document.getElementById("servico_detalhado");
+
+    const serviceDetails = {
+      "Cibersegurança": ["Proteção de redes", "sistemas e dados contra ameaças. Inclui gestão de riscos", "conformidade LGPD/GDPR", "monitoramento 24/7 e resposta a incidentes."],
+      "Computação em Nuvem (Cloud)": ["Migração", "gestão e otimização de infraestrutura em nuvem (AWS", "Azure", "Google Cloud). Inclui multicloud e Edge Computing."],
+      "Inteligência Artificial e Machine Learning": ["Implementação de IA para automação", "análise preditiva", "chatbots e otimização de processos empresariais."],
+      "Desenvolvimento de Software e Apps": ["Criação e manutenção de aplicações web", "mobile e sistemas personalizados. Inclui low-code/no-code e PWAs."],
+      "Consultoria em TI": ["Análise de infraestrutura", "planejamento estratégico digital e recomendação de soluções tecnológicas."],
+      "Suporte Técnico e Help Desk": ["Atendimento de chamados", "resolução de problemas técnicos", "gestão de dispositivos e suporte ao usuário final."],
+      "Ciência de Dados e Big Data": ["Coleta", "estruturação e análise de grandes volumes de dados para tomada de decisão estratégica."],
+      "Outsourcing de TI (BPO)": ["Terceirização de operações de TI", "incluindo gestão de infraestrutura", "aplicações e processos de negócio."],
+      "Gestão de Infraestrutura de TI": ["Monitoramento de servidores", "redes", "atualizações de software", "substituição de hardware e otimização de recursos."],
+      "DevOps e Automação": ["Integração contínua", "entrega contínua (CI/CD)", "automação de processos e gestão de infraestrutura como código."],
+      "Internet das Coisas (IoT)": ["Conectividade de dispositivos", "sensores e automação industrial para coleta e troca de dados em tempo real."],
+      "Blockchain": ["Segurança de dados", "contratos inteligentes", "rastreabilidade de cadeias de suprimentos e autenticação digital."],
+      "Realidade Aumentada/Virtual (AR/VR)": ["Treinamento corporativo", "simulações", "experiências de compra e aplicações em saúde e educação."],
+      "Computação Quântica": ["Algoritmos quânticos para otimização logística", "criptografia avançada e modelagem molecular."],
+      "Dispositivos como Serviço (DaaS)": ["Aluguel e gestão de hardware (notebooks", "dispositivos) com ciclo de vida completo incluindo descarte seguro."]
+    };
+
+    serviceSelect.addEventListener("change", function() {
+      detailSelect.replaceChildren();
+      const placeholder = document.createElement("option");
+      placeholder.value = "";
+      placeholder.textContent = "Selecione uma opção";
+      detailSelect.appendChild(placeholder);
+      (serviceDetails[serviceSelect.value] || []).forEach(function(detail) {
+        const option = document.createElement("option");
+        option.value = detail;
+        option.textContent = detail;
+        detailSelect.appendChild(option);
+      });
+      detailSelect.selectedIndex = 0;
+    });
+
+    const addressInput = document.getElementById("endereco");
+
+    const corporateInputs = [
+      document.getElementById("email"),
+      document.getElementById("empresa"),
+      document.getElementById("departamento"),
+      document.getElementById("prioridade")
+    ];
+
+    let selectedProfile = "";
+    let isReady = false;
+    let recordCount = 0;
+
+    function showStatus(message, type) {
+      statusMessage.className = "status-message is-visible " + type;
+      statusMessage.replaceChildren();
+
+      const icon = document.createElement("i");
+      icon.setAttribute("data-lucide", type === "success" ? "check-circle-2" : "circle-alert");
+      icon.style.width = "18px";
+      icon.style.height = "18px";
+      icon.style.flexShrink = "0";
+
+      const text = document.createElement("span");
+      text.textContent = message;
+      statusMessage.append(icon, text);
+      lucide.createIcons();
+    }
+
+    function clearStatus() {
+      statusMessage.className = "status-message";
+      statusMessage.replaceChildren();
+    }
+
+    function setSubmitting(isSubmitting) {
+      submitButton.disabled = isSubmitting;
+      submitButton.classList.toggle("hidden", isSubmitting);
+      sendingButton.classList.toggle("hidden", !isSubmitting);
+    }
+
+    function setProfile(profile) {
+      selectedProfile = profile;
+      const isCompany = profile === "Empresa";
+
+      corporateFields.classList.toggle("is-hidden", !isCompany);
+      priorityField.classList.toggle("hidden", !isCompany);
+      priorityGuide.classList.toggle("hidden", !isCompany);
+      companyKicker.classList.toggle("hidden", !isCompany);
+      companyDescription.classList.toggle("hidden", !isCompany);
+      userKicker.classList.toggle("hidden", isCompany);
+      userDescription.classList.toggle("hidden", isCompany);
+
+      corporateInputs.forEach(function(input) {
+        input.required = isCompany;
+      });
+      addressInput.required = isCompany;
+
+      clearStatus();
+      profileScreen.classList.add("is-hidden");
+      formScreen.classList.remove("is-hidden");
+      document.getElementById("nome_solicitante").focus();
+    }
+
+    function returnToProfiles() {
+      form.reset();
+      corporateInputs.forEach(function(input) {
+        input.required = false;
+      });
+      addressInput.required = false;
+      clearStatus();
+      formScreen.classList.add("is-hidden");
+      profileScreen.classList.remove("is-hidden");
+      selectedProfile = "";
+    }
+
+    document.getElementById("company-choice").addEventListener("click", function() {
+      setProfile("Empresa");
+    });
+
+    document.getElementById("user-choice").addEventListener("click", function() {
+      setProfile("Usuário comum");
+    });
+
+    document.getElementById("back-button").addEventListener("click", returnToProfiles);
+
+    const dataHandler = {
+      onDataChanged(data) {
+        recordCount = data.length;
+      }
+    };
+
+    async function initializeData() {
+      const result = await window.dataSdk.init(dataHandler);
+      isReady = result.isOk;
+
+      if (!result.isOk) {
+        showStatus("Não foi possível preparar o envio agora. Tente novamente em instantes.", "error");
+      }
+    }
+
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
+      clearStatus();
+
+      if (!selectedProfile) {
+        returnToProfiles();
+        return;
+      }
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      if (!isReady) {
+        showStatus("O serviço ainda está sendo preparado. Aguarde um instante e tente novamente.", "error");
+        return;
+      }
+
+      if (recordCount >= 999) {
+        showStatus("O limite de solicitações foi atingido. Entre em contato com a equipe responsável.", "error");
+        return;
+      }
+
+      setSubmitting(true);
+
+      const result = await window.dataSdk.create({
+        tipo_cliente: selectedProfile,
+        nome_solicitante: document.getElementById("nome_solicitante").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        telefone: document.getElementById("telefone").value.trim(),
+        endereco: document.getElementById("endereco").value.trim(),
+        departamento: document.getElementById("departamento").value.trim(),
+        empresa: document.getElementById("empresa").value.trim(),
+        tipo_servico: document.getElementById("tipo_servico").value,
+        servico_detalhado: document.getElementById("servico_detalhado").value,
+        prioridade: selectedProfile === "Empresa" ? document.getElementById("prioridade").value : "Não informado",
+        descricao: document.getElementById("descricao").value.trim(),
+        data_solicitacao: new Date().toISOString()
+      });
+
+      if (result.isOk) {
+        form.reset();
+        corporateInputs.forEach(function(input) {
+          input.required = selectedProfile === "Empresa";
+        });
+        showStatus("Solicitação enviada com sucesso. A equipe de T.I. retornará pelo contato informado.", "success");
+      } else {
+        showStatus("Não foi possível enviar sua solicitação. Revise sua conexão e tente novamente.", "error");
+      }
+
+      setSubmitting(false);
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      lucide.createIcons();
+      initializeData();
+    });
+  </script>
+ 
+</body></html>
