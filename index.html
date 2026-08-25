@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Serviços TI Web</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="app-shell"><div class="mobile-frame">
+<header class="top-grid">
+  <div class="brand-row">
+    <div class="brand-mark">◎</div>
+    <div>
+      <div class="eyebrow" style="color:#75f6e3">CENTRAL DE SERVIÇOS</div>
+      <h1>Precisa de apoio em T.I.?</h1>
+      <p>Escolha o tipo de atendimento e acesse sua área de serviços.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="profile-screen" class="flow-panel">
+  <div class="eyebrow">COMECE POR AQUI</div>
+  <h2 style="font-size:1.5rem;margin:8px 0">Como você precisa de ajuda?</h2>
+  <p class="muted" style="line-height:1.6">Selecione o perfil que melhor representa sua solicitação para receber o fluxo ideal.</p>
+  <div class="profile-grid" style="margin-top:20px">
+    <button id="company-choice" class="profile-choice company" type="button">
+      <span class="profile-icon">▦</span>
+      <strong>Empresa</strong>
+      <span>Fluxo corporativo com empresa, setor, prioridades, SLA e financeiro.</span>
+    </button>
+    <button id="user-choice" class="profile-choice user" type="button">
+      <span class="profile-icon">◯</span>
+      <strong>Usuário comum</strong>
+      <span>Fluxo rápido para solicitar serviços, acompanhar chamados e pagamentos.</span>
+    </button>
+  </div>
+</section>
+
+<section id="login-screen" class="flow-panel auth-card">
+  <button id="back-profile" class="back-link" type="button">← Alterar tipo de atendimento</button>
+  <div class="eyebrow" id="login-kicker">ACESSO</div>
+  <h2 style="font-size:1.5rem;margin:8px 0">Entre na sua conta</h2>
+  <p class="muted">Use uma conta existente ou faça seu cadastro.</p>
+  <div id="status" class="notice" style="display:none" aria-live="polite"></div>
+
+  <div id="login-box">
+    <form id="login-form">
+      <div class="field"><label>E-mail</label><input name="email" type="email" required></div>
+      <div class="field"><label>Senha</label><input name="password" type="password" required></div>
+      <button class="btn" style="width:100%" type="submit">Entrar</button>
+    </form>
+    <p style="text-align:center"><button id="show-register" class="btn ghost" type="button">Criar conta</button></p>
+  </div>
+
+  <div id="register-box" hidden>
+    <form id="register-form">
+      <div class="field"><label>Nome</label><input name="name" required minlength="3"></div>
+      <div class="field"><label>E-mail</label><input name="email" type="email" required></div>
+      <div class="field"><label>Senha</label><input name="password" type="password" minlength="6" required></div>
+      <input id="register-role" name="role" type="hidden" value="client">
+      <div class="field" id="company-select-wrap" hidden><label>Empresa</label><select id="companyId" name="companyId"></select></div>
+      <button class="btn" style="width:100%" type="submit">Cadastrar e entrar</button>
+    </form>
+    <p style="text-align:center"><button id="show-login" class="btn ghost" type="button">Já tenho conta</button></p>
+  </div>
+
+  <div class="demo-box" style="margin-top:16px">
+    <strong>Contas de demonstração</strong><br>
+    Admin: admin@servicosti.local / admin123<br>
+    Técnico: tecnico@servicosti.local / tec123<br>
+    Empresa: empresa@cliente.local / empresa123<br>
+    Cliente: cliente@local.test / cliente123
+  </div>
+</section>
+</main>
+<footer class="footer">Central de Serviços T.I. • Atendimento interno</footer>
+</div></div>
+<script type="module" src="assets/js/login.js"></script>
+</body></html>

@@ -1,0 +1,39 @@
+SERVIÇOS TI WEB — STATUS V2
+
+FUNCIONANDO LOCALMENTE
+[OK] Login / cadastro / sessão / logout
+[OK] Perfis de usuário
+[OK] Dashboard
+[OK] Chamados
+[OK] Pesquisa e filtros
+[OK] SLA básico e detecção de vencimento
+[OK] Técnico responsável
+[OK] Histórico de chamados
+[OK] Comentários
+[OK] Anexos locais IndexedDB
+[OK] Catálogo de serviços
+[OK] Tabela de preços
+[OK] Carrinho
+[OK] Checkout demonstrativo
+[OK] Financeiro
+[OK] Empresas
+[OK] Centro de custo / PO
+[OK] Feedback
+[OK] Notificações
+[OK] Relatório geral TXT
+[OK] Relatório individual TXT
+[OK] Exportação CSV
+[OK] Backup JSON
+[OK] Dados de demonstração
+[OK] Responsividade
+
+DEPENDE DE BACKEND / SERVIÇOS EXTERNOS PARA PRODUÇÃO
+[PENDENTE] Pagamento PIX real
+[PENDENTE] Cartão real
+[PENDENTE] Boleto real
+[PENDENTE] Autenticação segura de produção
+[PENDENTE] Banco de dados remoto
+[PENDENTE] Multi-tenancy seguro
+[PENDENTE] Upload remoto de anexos
+[PENDENTE] Auditoria de servidor
+[PENDENTE] Recuperação de senha por e-mail

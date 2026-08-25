@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Serviços TI Web - Central</title><link rel="stylesheet" href="assets/css/style.css"></head>
+<body>
+<div class="app-shell"><div class="mobile-frame">
+<header class="top-grid">
+  <div class="brand-row">
+    <div class="brand-mark">◎</div>
+    <div>
+      <div class="eyebrow" style="color:#75f6e3">CENTRAL DE SERVIÇOS</div>
+      <h1>Central de Serviços T.I.</h1>
+      <p>Chamados, serviços, pagamentos e relatórios em um único lugar.</p>
+    </div>
+  </div>
+</header>
+
+<main class="flow-panel">
+  <div class="user-strip">
+    <div><strong id="user-name"></strong><div class="meta"><span id="user-role"></span> • <span id="notification-count">0</span> notificações</div></div>
+    <button id="logout" class="btn small secondary">Sair</button>
+  </div>
+
+  <nav class="compact-nav" aria-label="Módulos">
+    <button data-section="dashboard">Resumo</button>
+    <button data-section="services">Serviços</button>
+    <button data-section="pricing">Valores</button>
+    <button data-section="new-ticket">Abrir chamado</button>
+    <button data-section="tickets">Chamados</button>
+    <button data-section="cart">Carrinho</button>
+    <button data-section="checkout">Checkout</button>
+    <button data-section="payments" data-role="admin,company">Financeiro</button>
+    <button data-section="companies" data-role="admin">Empresas</button>
+    <button data-section="feedback">Feedback</button>
+    <button data-section="notifications">Notificações</button>
+    <button data-section="reports">Relatórios</button>
+    <button data-section="about">Sobre</button>
+  </nav>
+
+  <div id="toast" class="notice" hidden></div>
+
+  <section id="dashboard" class="section active">
+    <div class="eyebrow">VISÃO GERAL</div>
+    <h2 class="section-title">Como está o atendimento?</h2>
+    <p class="muted">Acompanhe os principais indicadores da central.</p>
+    <div class="grid grid-4" style="margin-top:16px">
+      <div class="metric-card"><span class="muted">Abertos</span><span id="m-open" class="metric">0</span></div>
+      <div class="metric-card"><span class="muted">Em atendimento</span><span id="m-progress" class="metric">0</span></div>
+      <div class="metric-card"><span class="muted">Resolvidos</span><span id="m-done" class="metric">0</span></div>
+      <div class="metric-card"><span class="muted">Críticos</span><span id="m-critical" class="metric">0</span></div>
+      <div class="metric-card"><span class="muted">Faturamento</span><span id="m-revenue" class="metric">R$ 0</span></div>
+      <div class="metric-card"><span class="muted">SLA</span><span id="m-sla" class="metric">0%</span></div>
+      <div class="metric-card"><span class="muted">Avaliação</span><span id="m-rating" class="metric">0/5</span></div>
+      <div class="metric-card"><span class="muted">Carrinho</span><span id="m-cart" class="metric">0</span></div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <h3>Chamados recentes</h3>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Serviço</th><th>Prioridade</th><th>Status</th><th></th></tr></thead><tbody id="recent-tickets"></tbody></table></div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="eyebrow">CATÁLOGO</div><h2 class="section-title">Serviços disponíveis</h2>
+    <p class="muted">Escolha o serviço ideal e adicione ao carrinho.</p>
+    <div class="toolbar" style="margin:15px 0">
+      <div class="field"><label>Pesquisar</label><input id="service-search" placeholder="Nome ou descrição"></div>
+      <div class="field"><label>Categoria</label><select id="service-category"></select></div>
+    </div>
+    <div id="services-grid" class="grid grid-3"></div>
+
+    <div id="service-cart-float" class="service-cart-float">
+      <button id="open-mini-cart" type="button" aria-label="Abrir resumo do carrinho">
+        <span class="cart-left">
+          <span class="cart-icon">🛒</span>
+          <span>
+            <span class="cart-title">Seu carrinho</span>
+            <span id="service-cart-count" class="cart-sub">0 serviços adicionados</span>
+          </span>
+        </span>
+        <span id="service-cart-total" class="cart-total">R$ 0,00</span>
+      </button>
+    </div>
+  </section>
+
+  <section id="pricing" class="section">
+    <div class="eyebrow">VALORES</div><h2 class="section-title">Tabela de preços</h2>
+    <div class="table-wrap"><table><thead><tr><th>Serviço</th><th>Categoria</th><th>Cobrança</th><th>Autônomo</th><th>Empresarial</th><th>Prazo</th></tr></thead><tbody id="pricing-body"></tbody></table></div>
+  </section>
+
+  <section id="new-ticket" class="section">
+    <div class="eyebrow">NOVO ATENDIMENTO</div><h2 class="section-title">Descreva sua necessidade</h2>
+    <p class="muted">Informe os dados para direcionarmos o chamado corretamente.</p>
+    <form id="ticket-form" style="margin-top:16px">
+      <div class="form-grid">
+        <div class="field"><label>Solicitante</label><input name="requester" required minlength="3"></div>
+        <div class="field"><label>Empresa</label><select id="ticket-company" name="companyId"></select></div>
+        <div class="field"><label>Serviço</label><select id="ticket-service" name="serviceId" required></select></div>
+        <div class="field"><label>Prioridade</label><select name="priority" required><option value="">Selecione</option><option>Baixa</option><option>Média</option><option>Alta</option><option>Crítica</option></select></div>
+      </div>
+      <div class="field"><label>Como podemos ajudar?</label><textarea name="description" required minlength="10"></textarea></div>
+      <div class="notice" style="margin-bottom:14px">Inclua mensagens de erro, serviço envolvido e desde quando o problema ocorre.</div>
+      <button class="btn" style="width:100%" type="submit">Enviar solicitação</button>
+    </form>
+  </section>
+
+  <section id="tickets" class="section">
+    <div class="eyebrow">ATENDIMENTOS</div><h2 class="section-title">Chamados</h2>
+    <div class="toolbar" style="margin:15px 0">
+      <div class="field"><label>Pesquisar</label><input id="ticket-search" placeholder="ID, solicitante, empresa ou serviço"></div>
+      <div class="field"><label>Status</label><select id="ticket-status-filter"><option value="">Todos</option><option>Aberto</option><option>Em atendimento</option><option>Resolvido</option><option>Encerrado</option></select></div>
+      <div class="field"><label>Prioridade</label><select id="ticket-priority-filter"><option value="">Todas</option><option>Baixa</option><option>Média</option><option>Alta</option><option>Crítica</option></select></div>
+    </div>
+    <div class="table-wrap"><table><thead><tr><th>ID</th><th>Solicitante</th><th>Empresa</th><th>Serviço</th><th>Prioridade</th><th>Status</th><th>SLA</th><th></th></tr></thead><tbody id="tickets-body"></tbody></table></div>
+  </section>
+
+  <section id="cart" class="section">
+    <div class="eyebrow">SERVIÇOS ESCOLHIDOS</div><h2 class="section-title">Carrinho</h2>
+    <div class="split" style="margin-top:14px"><div id="cart-list" class="list"></div><div class="card"><h3>Total</h3><div id="cart-total" class="metric"></div><button class="btn" data-section="checkout" style="width:100%;margin-top:12px">Ir ao checkout</button></div></div>
+  </section>
+
+  <section id="checkout" class="section">
+    <div class="eyebrow">FINALIZAÇÃO</div><h2 class="section-title">Checkout</h2>
+    <form id="checkout-form" style="margin-top:14px">
+      <div class="form-grid">
+        <div class="field"><label>Cliente / empresa</label><input name="client" required></div>
+        <div class="field"><label>Forma de pagamento</label><select name="method" required><option value="">Selecione</option><option>PIX</option><option>Cartão</option><option>Boleto</option><option>Faturado 30 dias</option></select></div>
+        <div class="field"><label>Centro de custo</label><input name="costCenter"></div>
+        <div class="field"><label>PO / Ordem de compra</label><input name="purchaseOrder"></div>
+      </div>
+      <div class="notice" style="margin-bottom:14px">Pagamento demonstrativo. Nenhum valor real é movimentado nesta versão.</div>
+      <button class="btn" style="width:100%" type="submit">Finalizar checkout</button>
+    </form>
+  </section>
+
+  <section id="payments" class="section">
+    <div class="eyebrow">GESTÃO FINANCEIRA</div><h2 class="section-title">Financeiro</h2>
+    <div class="table-wrap"><table><thead><tr><th>ID</th><th>Cliente</th><th>Método</th><th>Status</th><th>Total</th><th>Data</th><th>Ação</th></tr></thead><tbody id="payments-body"></tbody></table></div>
+  </section>
+
+  <section id="companies" class="section">
+    <div class="eyebrow">B2B</div><h2 class="section-title">Empresas</h2>
+    <div class="split" style="margin-top:14px">
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Empresa</th><th>CNPJ</th><th>Setor</th><th>C.Custo</th><th>SLA</th><th>Contrato</th></tr></thead><tbody id="companies-body"></tbody></table></div>
+      <div class="card">
+        <h3>Cadastrar empresa</h3>
+        <form id="company-form">
+          <div class="field"><label>Razão/Nome</label><input name="name" required></div>
+          <div class="field"><label>CNPJ</label><input name="cnpj" required></div>
+          <div class="field"><label>Departamento</label><input name="department"></div>
+          <div class="field"><label>Centro de custo</label><input name="costCenter"></div>
+          <div class="field"><label>Contrato</label><input name="contract"></div>
+          <div class="field"><label>Plano SLA</label><select name="slaPlan"><option>Standard</option><option>Business</option><option>Premium</option></select></div>
+          <button class="btn" style="width:100%">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="feedback" class="section">
+    <div class="eyebrow">SATISFAÇÃO</div><h2 class="section-title">Feedback</h2>
+    <div class="split" style="margin-top:14px">
+      <div class="card">
+        <form id="feedback-form">
+          <div class="field"><label>ID do chamado</label><input name="ticketId"></div>
+          <div class="field"><label>Avaliação</label><select name="rating" required><option value="">Selecione</option><option value="5">5 - Excelente</option><option value="4">4 - Muito bom</option><option value="3">3 - Regular</option><option value="2">2 - Ruim</option><option value="1">1 - Péssimo</option></select></div>
+          <div class="field"><label>Comentário</label><textarea name="comment"></textarea></div>
+          <button class="btn" style="width:100%">Salvar feedback</button>
+        </form>
+      </div>
+      <div id="feedback-list" class="list"></div>
+    </div>
+  </section>
+
+  <section id="notifications" class="section">
+    <div class="page-head"><div><div class="eyebrow">ATUALIZAÇÕES</div><h2 class="section-title">Notificações</h2></div><button id="mark-read" class="btn secondary small">Marcar lidas</button></div>
+    <div id="notifications-list" class="list"></div>
+  </section>
+
+  <section id="reports" class="section">
+    <div class="eyebrow">DOCUMENTAÇÃO</div><h2 class="section-title">Relatórios e backup</h2>
+    <div class="grid grid-3" style="margin-top:14px">
+      <div class="card"><h3>Relatório TXT</h3><p class="muted">Resumo geral da operação.</p><button id="report-txt" class="btn">Gerar TXT</button></div>
+      <div class="card"><h3>Chamados CSV</h3><p class="muted">Exportação para planilhas.</p><button id="report-csv" class="btn">Gerar CSV</button></div>
+      <div class="card"><h3>Backup JSON</h3><p class="muted">Base local completa.</p><button id="export-json" class="btn">Exportar JSON</button></div>
+    </div>
+    <div class="card" style="margin-top:14px"><h3>Base de demonstração</h3><button id="reset-demo" class="btn danger">Restaurar dados demo</button></div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="eyebrow">PROJETO</div><h2 class="section-title">Sobre o sistema</h2>
+    <div class="notice" style="margin-top:14px">Serviços TI Web é uma central de serviços construída em HTML, CSS e JavaScript puro, com suporte a chamados, SLA, catálogo, carrinho, checkout demonstrativo, empresas, feedback e relatórios.</div>
+  </section>
+</main>
+
+<footer class="footer">Central de Serviços T.I. • Atendimento interno</footer>
+</div></div>
+
+<div id="mini-cart-modal" class="modal" hidden>
+  <div class="modal-panel" style="width:min(560px,100%)">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">RESUMO DA COMPRA</div>
+        <h2 style="margin:5px 0 0">Carrinho de serviços</h2>
+      </div>
+      <button id="close-mini-cart" class="btn danger small" type="button">Fechar</button>
+    </div>
+
+    <div id="mini-cart-items"></div>
+
+    <div class="mini-cart-footer">
+      <div class="mini-cart-total-line">
+        <span class="muted">Total da compra</span>
+        <strong id="mini-cart-total">R$ 0,00</strong>
+      </div>
+      <div class="mini-cart-actions">
+        <button id="mini-cart-go-cart" class="btn secondary" type="button">Ver carrinho completo</button>
+        <button id="mini-cart-go-checkout" class="btn" type="button">Ir ao checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="ticket-modal" class="modal" hidden><div class="modal-panel">
+  <div class="page-head"><div><div class="eyebrow">DETALHES DO CHAMADO</div><h2 id="modal-title">Chamado</h2></div><button id="close-modal" class="btn danger small">Fechar</button></div>
+  <div class="split">
+    <div>
+      <div id="modal-ticket-main" class="card"></div>
+      <div class="card" style="margin-top:12px">
+        <h3>Atualizar atendimento</h3>
+        <div class="form-grid">
+          <div class="field"><label>Status</label><select id="detail-status"><option>Aberto</option><option>Em atendimento</option><option>Resolvido</option><option>Encerrado</option></select></div>
+          <div class="field"><label>Técnico</label><select id="detail-technician"></select></div>
+        </div>
+        <button id="save-ticket-detail" class="btn">Salvar alterações</button>
+        <button id="ticket-report" class="btn secondary">Relatório TXT</button>
+      </div>
+      <div class="card" style="margin-top:12px">
+        <h3>Comentários</h3><div id="comments-list" class="list"></div>
+        <form id="comment-form"><div class="field"><label>Novo comentário</label><textarea name="comment" required></textarea></div><button class="btn">Enviar</button></form>
+      </div>
+    </div>
+    <div>
+      <div class="card"><h3>Histórico</h3><div id="history-list" class="timeline"></div></div>
+      <div class="card" style="margin-top:12px"><h3>Anexos locais</h3><input id="attachment-input" type="file" multiple><p class="help">Até 5 MB por arquivo, salvo no navegador.</p><div id="attachments-list" class="list"></div></div>
+    </div>
+  </div>
+</div></div>
+
+<script type="module" src="assets/js/app.js"></script>
+</body></html>
